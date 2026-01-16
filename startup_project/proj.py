@@ -64,7 +64,8 @@ angles += angles[:1]
 fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
 ax.fill(angles, values, color='blue', alpha=0.25)
 ax.plot(angles, values, color='blue', linewidth=2)
-ax.set_yticklabels([])
+ax.set_yticks([1, 2, 3, 4, 5])
+ax.set_yticklabels(['1', '2', '3', '4', '5'], color='gray')
 ax.set_ylim(0, 5) # Garantir escala de 0 a 5
 ax.set_xticks(angles[:-1])
 ax.set_xticklabels(categories)
@@ -80,6 +81,7 @@ df_sectors = df_ativa # Usar todas as startups ativas para comparar todos os set
 plt.figure(figsize=(8, 6))
 df_sectors.boxplot(column='Score_Global', by='setor', grid=False)
 plt.title('Distribuição do Score_Global por Setor')
+plt.grid(axis='y', color='gray', linestyle='--', linewidth=0.5 )
 plt.suptitle('') # Remove o título automático do pandas
 plt.ylabel('Score Global')
 plt.xlabel('Setor')
