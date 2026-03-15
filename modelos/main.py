@@ -2,7 +2,7 @@ while True:
 
     import pandas as pd
 
-    df_modelos = pd.read_csv('modelos.csv', sep=';')
+    df_modelos = pd.read_csv('modelos\modelos.csvn', sep=';')
 
     print(df_modelos)
 
